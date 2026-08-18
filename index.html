@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Music portfolio of Felipe Callejas, saxophonist, vocalist, and clarinetist.">
+  <title>Felipe Callejas | Music Portfolio</title>
+  <style>@font-face {
+  font-family: "Chewy";
+  src: url("assets/fonts/font_01.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bryndan Write";
+  src: url("assets/fonts/font_02.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cy Grotesk";
+  src: url("assets/fonts/font_03.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #050707;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050707;
+}
+
+img,
+video {
+  display: block;
+}
+
+.portfolio-scroll {
+  width: 100%;
+  overflow: clip;
+  background: #050707;
+}
+
+.canva-page {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #050707;
+}
+
+.canva-page-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobile-content,
+.mobile-section-title,
+.mobile-caption {
+  display: none;
+}
+
+.video-slot {
+  position: absolute;
+  z-index: 2;
+}
+
+.portfolio-video {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background: #000;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.page-recording .video-one {
+  top: 29.594%;
+  left: 5.362%;
+  width: 18.543%;
+  height: 59.109%;
+}
+
+.page-recording .video-two {
+  top: 30.363%;
+  left: 39.918%;
+  width: 18.543%;
+  height: 59.109%;
+}
+
+.page-recording .video-three {
+  top: 30.891%;
+  left: 74.451%;
+  width: 19.558%;
+  height: 59.109%;
+}
+
+.page-live .video-one {
+  top: 30.204%;
+  left: 4.555%;
+  width: 18.920%;
+  height: 59.796%;
+}
+
+.page-live .video-two {
+  top: 30.204%;
+  left: 40.560%;
+  width: 18.880%;
+  height: 59.669%;
+}
+
+.page-live .video-three {
+  top: 30.204%;
+  left: 75.495%;
+  width: 18.880%;
+  height: 60.183%;
+}
+
+@media (max-width: 700px) {
+  .responsive-page,
+  .video-page {
+    min-height: auto;
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+
+  .responsive-page > .canva-page-image,
+  .video-page > .canva-page-image {
+    display: none;
+  }
+
+  .mobile-content {
+    display: flex;
+    width: 100%;
+    min-height: 100svh;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 3.25rem 1.15rem 4rem;
+    color: #fff;
+  }
+
+  .mobile-content h1,
+  .mobile-content h2,
+  .mobile-section-title {
+    margin: 0;
+    font-family: "Bryndan Write", "Arial Rounded MT Bold", sans-serif;
+    font-weight: 400;
+    line-height: 0.98;
+    text-align: center;
+  }
+
+  .mobile-content h1 {
+    font-family: "Chewy", "Arial Rounded MT Bold", sans-serif;
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .mobile-content h2,
+  .mobile-section-title {
+    font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
+
+  .mobile-content p {
+    margin: 0;
+    font-family: "Cy Grotesk", Arial, sans-serif;
+    font-size: clamp(1.05rem, 4.7vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .mobile-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .mobile-hero-page {
+    background: #0c0c0c;
+  }
+
+  .mobile-hero {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .mobile-hero .mobile-kicker {
+    font-family: "Bryndan Write", "Arial Rounded MT Bold", sans-serif;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .mobile-hero .mobile-image {
+    margin: 0 auto;
+  }
+
+  .mobile-roles {
+    letter-spacing: 0.04em;
+  }
+
+  .mobile-about-page {
+    background: #2b558b;
+  }
+
+  .mobile-about {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .mobile-about strong {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .mobile-work-page {
+    background: #9b7d53;
+  }
+
+  .mobile-work > p {
+    text-align: left;
+  }
+
+  .mobile-gallery,
+  .mobile-card-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .mobile-gallery .mobile-image,
+  .mobile-card .mobile-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .video-page {
+    display: flex;
+    min-height: 100svh;
+    flex-direction: column;
+    gap: 2.75rem;
+    padding: 3rem 1rem 4rem;
+  }
+
+  .page-recording {
+    background: #061315;
+  }
+
+  .page-live {
+    background: #242120;
+  }
+
+  .mobile-section-title {
+    display: block;
+    margin: 0 0 0.25rem;
+    color: #fff;
+  }
+
+  .video-slot,
+  .page-recording .video-one,
+  .page-recording .video-two,
+  .page-recording .video-three,
+  .page-live .video-one,
+  .page-live .video-two,
+  .page-live .video-three {
+    position: static;
+    width: min(100%, 30rem);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .mobile-caption {
+    display: block;
+    min-height: 4rem;
+    margin-bottom: 0.8rem;
+    color: #fff;
+    font-family: "Chewy", "Arial Rounded MT Bold", sans-serif;
+    text-align: center;
+  }
+
+  .mobile-caption h3 {
+    margin: 0;
+    font-size: clamp(1.35rem, 6vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .mobile-caption p {
+    margin: 0.35rem 0 0;
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+    line-height: 1.25;
+  }
+
+  .portfolio-video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.35rem;
+    object-fit: contain;
+  }
+
+  .mobile-experience-page {
+    background: #252120;
+  }
+
+  .mobile-card {
+    color: #fff;
+    text-align: center;
+  }
+
+  .mobile-card h3,
+  .mobile-text-list h3 {
+    margin: 1rem 0 0;
+    font-family: "Chewy", "Arial Rounded MT Bold", sans-serif;
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.15;
+  }
+
+  .mobile-card p {
+    margin-top: 0.3rem;
+  }
+
+  .mobile-education-page {
+    background: #4a3932;
+  }
+
+  .mobile-text-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .mobile-text-list article {
+    padding: 1.2rem 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    text-align: center;
+  }
+
+  .mobile-text-list h3 {
+    margin-top: 0;
+  }
+
+  .mobile-text-list p {
+    margin-top: 0.35rem;
+  }
+
+  .mobile-contact-page {
+    background: #194743;
+  }
+
+  .mobile-contact {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .mobile-contact p {
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-contact .mobile-contact-lead {
+    margin: 1rem 0;
+    font-family: "Chewy", "Arial Rounded MT Bold", sans-serif;
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+    font-weight: 400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
+</head>
+<body>
+  
+<main class="portfolio-scroll">
+  
+  <section class="canva-page responsive-page mobile-hero-page" aria-label="Felipe Callejas Music Portfolio">
+    <img class="canva-page-image" src="assets/images/image_01.png" alt="Felipe Callejas Music Portfolio">
+    
+<div class="mobile-content mobile-hero">
+  <p class="mobile-kicker">MUSIC PORTFOLIO</p>
+  <img class="mobile-image" src="assets/images/image_02.jpg" alt="Felipe Callejas performing live on saxophone">
+  <h1>FELIPE CALLEJAS</h1>
+  <p class="mobile-roles">SAXOPHONIST | VOCALIST | CLARINETIST</p>
+</div>
+  </section>
+  
+  <section class="canva-page responsive-page mobile-about-page" aria-label="About me">
+    <img class="canva-page-image" src="assets/images/image_03.png" alt="About me">
+    
+<div class="mobile-content mobile-about">
+  <h2>ABOUT ME</h2>
+  <img class="mobile-image" src="assets/images/image_04.jpg" alt="Felipe Callejas singing on stage">
+  <p><strong>Hello!</strong> I'm Felipe Callejas, a 24-year-old saxophonist, clarinetist, and vocalist with 12 years of experience performing at a wide range of venues and working in recording studios.</p>
+</div>
+  </section>
+  
+  <section class="canva-page responsive-page mobile-work-page" aria-label="What I do">
+    <img class="canva-page-image" src="assets/images/image_05.png" alt="What I do">
+    
+<div class="mobile-content mobile-work">
+  <h2>WHAT I DO</h2>
+  <p>I specialize in Latin and Colombian music—including merengue, salsa, porro, and cumbia—as well as Latin pop and ambient music for cocktail receptions, private events, weddings, and corporate functions.</p>
+  <div class="mobile-gallery" aria-label="Performance gallery">
+    <img class="mobile-image" src="assets/images/image_06.jpg" alt="Felipe Callejas playing saxophone on stage">
+    <img class="mobile-image" src="assets/images/image_07.jpg" alt="Felipe Callejas singing live">
+    <img class="mobile-image" src="assets/images/image_08.jpg" alt="Felipe Callejas playing saxophone outdoors">
+  </div>
+</div>
+  </section>
+
+  <section class="canva-page video-page page-recording" aria-label="Recording experience">
+    <img class="canva-page-image" src="assets/images/image_09.png" alt="Recording experience">
+    <h2 class="mobile-section-title">RECORDING EXPERIENCE</h2>
+    
+  <article class="video-slot video-one">
+    <div class="mobile-caption">
+      <h3>Mambo Fridays</h3>
+      
+    </div>
+    <video
+    aria-label="Mambo Fridays"
+    class="portfolio-video"
+    controls
+    playsinline
+    poster="assets/images/image_10.jpg"
+    preload="metadata"
+  >
+    <source src="assets/videos/video_01.mp4" type="video/mp4">
+    Your browser can't play this video.
+  </video>
+  </article>
+    
+  <article class="video-slot video-two">
+    <div class="mobile-caption">
+      <h3>Vocal recording session</h3>
+      <p>Citocina Records</p>
+    </div>
+    <video
+    aria-label="Vocal recording session at Citocina Records"
+    class="portfolio-video"
+    controls
+    playsinline
+    poster="assets/images/image_11.jpg"
+    preload="metadata"
+  >
+    <source src="assets/videos/video_02.mp4" type="video/mp4">
+    Your browser can't play this video.
+  </video>
+  </article>
+    
+  <article class="video-slot video-three">
+    <div class="mobile-caption">
+      <h3>Home recording session</h3>
+      
+    </div>
+    <video
+    aria-label="Home recording session"
+    class="portfolio-video"
+    controls
+    playsinline
+    poster="assets/images/image_12.jpg"
+    preload="metadata"
+  >
+    <source src="assets/videos/video_03.mp4" type="video/mp4">
+    Your browser can't play this video.
+  </video>
+  </article>
+  </section>
+
+  <section class="canva-page video-page page-live" aria-label="Live performances">
+    <img class="canva-page-image" src="assets/images/image_13.png" alt="Live performances">
+    <h2 class="mobile-section-title">LIVE PERFORMANCES</h2>
+    
+  <article class="video-slot video-one">
+    <div class="mobile-caption">
+      <h3>Live improvisation</h3>
+      <p>Catalexia Duo, 2024</p>
+    </div>
+    <video
+    aria-label="Live improvisation, Catalexia Duo, 2024"
+    class="portfolio-video"
+    controls
+    playsinline
+    poster="assets/images/image_14.jpg"
+    preload="metadata"
+  >
+    <source src="assets/videos/video_04.mp4" type="video/mp4">
+    Your browser can't play this video.
+  </video>
+  </article>
+    
+  <article class="video-slot video-two">
+    <div class="mobile-caption">
+      <h3>Live mambo with Miguel Moly</h3>
+      <p>2026</p>
+    </div>
+    <video
+    aria-label="Live mambo with Miguel Moly, 2026"
+    class="portfolio-video"
+    controls
+    playsinline
+    poster="assets/images/image_15.jpg"
+    preload="metadata"
+  >
+    <source src="assets/videos/video_05.mp4" type="video/mp4">
+    Your browser can't play this video.
+  </video>
+  </article>
+    
+  <article class="video-slot video-three">
+    <div class="mobile-caption">
+      <h3>Live wedding performance</h3>
+      <p>Live Band, 2022</p>
+    </div>
+    <video
+    aria-label="Live wedding performance, Live Band, 2022"
+    class="portfolio-video"
+    controls
+    playsinline
+    poster="assets/images/image_16.jpg"
+    preload="metadata"
+  >
+    <source src="assets/videos/video_06.mp4" type="video/mp4">
+    Your browser can't play this video.
+  </video>
+  </article>
+  </section>
+
+  
+  <section class="canva-page responsive-page mobile-experience-page" aria-label="Career highlights">
+    <img class="canva-page-image" src="assets/images/image_17.png" alt="Career highlights">
+    
+<div class="mobile-content mobile-experience">
+  <h2>CAREER HIGHLIGHTS</h2>
+  <div class="mobile-card-list">
+    <article class="mobile-card">
+      <img class="mobile-image" src="assets/images/image_18.jpg" alt="Felipe Callejas with a Congos de Oro award">
+      <h3>Congos de Oro</h3>
+      <p>2023 - 2024</p>
+    </article>
+    <article class="mobile-card">
+      <img class="mobile-image" src="assets/images/image_19.jpg" alt="Baritone saxophone recording session">
+      <h3>Baritone saxophone recording session</h3>
+      <p>Citocina Records</p>
+      <p>2025</p>
+    </article>
+    <article class="mobile-card">
+      <img class="mobile-image" src="assets/images/image_20.jpg" alt="Felipe Callejas with Miguel Moly">
+      <h3>Miguel Moly</h3>
+      <p>2025 - 2026</p>
+    </article>
+  </div>
+</div>
+  </section>
+  
+  <section class="canva-page responsive-page mobile-education-page" aria-label="Education and experience">
+    <img class="canva-page-image" src="assets/images/image_21.png" alt="Education and experience">
+    
+<div class="mobile-content mobile-education">
+  <h2>EDUCATION & EXPERIENCE</h2>
+  <div class="mobile-text-list">
+    <article><h3>Conservatorio de Ibagué — Technical Diploma in Music</h3><p>2009 - 2020</p></article>
+    <article><h3>Saxophonist, clarinetist, and vocalist — live bands, weddings, and events</h3><p>2022 - 2024</p></article>
+    <article><h3>Clarinetist, Tolima Departmental Band</h3><p>2015 - 2019</p></article>
+    <article><h3>Saxophonist, Orquesta Klassica</h3><p>Congo de Oro Award</p><p>2023 - 2024</p></article>
+    <article><h3>Session musician, Citocina Records</h3><p>2025</p></article>
+    <article><h3>Saxophonist for Miguel Moly</h3><p>2025 - 2026</p></article>
+  </div>
+</div>
+  </section>
+  
+  <section class="canva-page responsive-page mobile-contact-page" aria-label="Contact">
+    <img class="canva-page-image" src="assets/images/image_22.png" alt="Contact">
+    
+<div class="mobile-content mobile-contact">
+  <h2>LET'S WORK TOGETHER!</h2>
+  <img class="mobile-image" src="assets/images/image_23.jpg" alt="Felipe Callejas outdoors at night">
+  <p>Email: Felipelamprea14@outlook.com</p>
+  <p>Phone: +57 3124557211</p>
+  <p class="mobile-contact-lead">Available for collaborations and projects!</p>
+  <p>Follow me: @felipecallesax</p>
+</div>
+  </section>
+</main>
+</body>
+</html>
